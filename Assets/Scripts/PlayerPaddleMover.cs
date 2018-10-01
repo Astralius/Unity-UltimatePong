@@ -44,7 +44,6 @@ public class PlayerPaddleMover : MonoBehaviour
     private void Update()
     {
         transform.localPosition = Vector2.ClampMagnitude(transform.localPosition, HorizontalPositionThreshold);
-        Debug.Log("Velocity: " + rigidbody2D.velocity);
     }
 
     private void SetupLongPressGesture()
@@ -66,17 +65,17 @@ public class PlayerPaddleMover : MonoBehaviour
         switch (gesture.State)
         {
             case GestureRecognizerState.Began:
-            Debug.Log($"Long press began: ({gestureFocusPosition})");
+            // Debug.Log($"Long press began: ({gestureFocusPosition})");
             BeginDrag(gestureFocusPosition);
             break;
 
             case GestureRecognizerState.Executing:
-            Debug.Log($"Long press moved: {gestureFocusPosition}");
+            // Debug.Log($"Long press moved: {gestureFocusPosition}");
             DragTo(gestureFocusPosition);
             break;
 
             case GestureRecognizerState.Ended:
-            Debug.Log($"Long press end: {gestureFocusPosition}, delta: {gesture.DeltaX}, {gesture.DeltaY}");
+            // Debug.Log($"Long press end: {gestureFocusPosition}, delta: {gesture.DeltaX}, {gesture.DeltaY}");
             EndDrag(gestureFocusPosition);
             break;
         }
@@ -137,7 +136,6 @@ public class PlayerPaddleMover : MonoBehaviour
                     {
                         case "Right":
                         {
-                            Debug.Log("RIGHT");
                             helperVector2.x = SpeedForce;
                             helperVector2.y = 0;
                             constantForce2D.relativeForce = helperVector2;
@@ -146,7 +144,6 @@ public class PlayerPaddleMover : MonoBehaviour
 
                         case "Left":
                         {
-                            Debug.Log("LEFT");
                             helperVector2.x = -SpeedForce;
                             helperVector2.y = 0;
                             constantForce2D.relativeForce = helperVector2;
