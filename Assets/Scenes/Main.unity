@@ -457,16 +457,6 @@ Prefab:
       propertyPath: RightControlZone
       value: 
       objectReference: {fileID: 587913293}
-    - target: {fileID: 114337691008581470, guid: 4ca58d57610c1424bb8ee221f5dd3c96,
-        type: 2}
-      propertyPath: ControlMode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 50100796103731292, guid: 4ca58d57610c1424bb8ee221f5dd3c96,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ca58d57610c1424bb8ee221f5dd3c96, type: 2}
   m_IsPrefabAsset: 0
