@@ -1,5 +1,7 @@
 ﻿using DigitalRubyShared;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerPaddleMover : MonoBehaviour
@@ -14,8 +16,17 @@ public class PlayerPaddleMover : MonoBehaviour
     public float JoystickThreshold = 0.05f;
 
     public ControlMode ControlMode;
+    public Text CurrentModeText;
     public GameObject LeftControlZone;
-    public GameObject RightControlZone;
+    public GameObject RightControlZone;   
+
+    private static readonly List<ControlMode> ControlModes = new List<ControlMode>
+    {
+        ControlMode.Drag,
+        ControlMode.Joystick,
+        ControlMode.JoystickDrag,
+        ControlMode.LeftRight
+    };
 
     private new Transform transform;
     private new Rigidbody2D rigidbody2D;
@@ -27,14 +38,17 @@ public class PlayerPaddleMover : MonoBehaviour
     private Vector2 helperVector2 = Vector2.zero;
 
     private LongPressGestureRecognizer longPressGesture;
-
+    private TapGestureRecognizer doubleTapGesture;
+    
     private void Start()
     {
         transform = GetComponent<Transform>();
         rigidbody2D = GetComponent<Rigidbody2D>();
         constantForce2D = GetComponent<ConstantForce2D>();
 
+        SetupDoubleTapGesture();
         SetupLongPressGesture();
+        CurrentModeText.text = ControlMode.ToString();
 
         var isLeftRightControlled = ControlMode == ControlMode.LeftRight;
         LeftControlZone.SetActive(isLeftRightControlled);
@@ -46,13 +60,26 @@ public class PlayerPaddleMover : MonoBehaviour
         transform.localPosition = Vector2.ClampMagnitude(transform.localPosition, HorizontalPositionThreshold);
     }
 
+    private void SetupDoubleTapGesture()
+    {
+        doubleTapGesture = new TapGestureRecognizer
+        {
+            NumberOfTapsRequired = 2,
+            ThresholdUnits = 0.3f,
+            ThresholdSeconds = 0.2f
+        };
+        doubleTapGesture.StateUpdated += DoubleTapGestureCallback;
+        FingersScript.Instance.AddGesture(doubleTapGesture);
+    }
+
     private void SetupLongPressGesture()
     {
         longPressGesture = new LongPressGestureRecognizer
         {
+            RequireGestureRecognizerToFail = doubleTapGesture,
             MaximumNumberOfTouchesToTrack = 1,
             ThresholdUnits = Mathf.Infinity,
-            MinimumDurationSeconds = 0.01f
+            MinimumDurationSeconds = 0.2f
         };
         longPressGesture.StateUpdated += LongPressGestureCallback;
         FingersScript.Instance.AddGesture(longPressGesture);
@@ -65,19 +92,37 @@ public class PlayerPaddleMover : MonoBehaviour
         switch (gesture.State)
         {
             case GestureRecognizerState.Began:
-            // Debug.Log($"Long press began: ({gestureFocusPosition})");
-            BeginDrag(gestureFocusPosition);
-            break;
+            {
+                // Debug.Log($"Long press began: ({gestureFocusPosition})");
+                BeginDrag(gestureFocusPosition);
+                break;
+            }
 
             case GestureRecognizerState.Executing:
-            // Debug.Log($"Long press moved: {gestureFocusPosition}");
-            DragTo(gestureFocusPosition);
-            break;
+            {
+                // Debug.Log($"Long press moved: {gestureFocusPosition}");
+                DragTo(gestureFocusPosition);
+                break;
+            }
 
             case GestureRecognizerState.Ended:
-            // Debug.Log($"Long press end: {gestureFocusPosition}, delta: {gesture.DeltaX}, {gesture.DeltaY}");
-            EndDrag(gestureFocusPosition);
-            break;
+            {
+                // Debug.Log($"Long press end: {gestureFocusPosition}, delta: {gesture.DeltaX}, {gesture.DeltaY}");
+                EndDrag(gestureFocusPosition);
+                break;
+            }
+        }
+    }
+
+    private void DoubleTapGestureCallback(GestureRecognizer gesture)
+    {
+        if (gesture.State == GestureRecognizerState.Ended)
+        {
+            ControlMode = GetNextControlMode();
+            var isLeftRightControlled = ControlMode == ControlMode.LeftRight;
+            LeftControlZone.SetActive(isLeftRightControlled);
+            RightControlZone.SetActive(isLeftRightControlled);
+            CurrentModeText.text = ControlMode.ToString();
         }
     }
 
@@ -230,6 +275,14 @@ public class PlayerPaddleMover : MonoBehaviour
         constantForce2D.relativeForce = Vector2.zero;
 
         longPressGesture.Reset();
+    }
+
+    private ControlMode GetNextControlMode()
+    {
+        var index = ControlModes.IndexOf(ControlMode);
+        index += 1;
+        index %= ControlModes.Count;
+        return ControlModes[index];
     }
 }
 
