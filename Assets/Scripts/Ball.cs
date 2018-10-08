@@ -3,26 +3,67 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class Ball : MonoBehaviour
 {
+    public float MaxSpeed;
+    public float MinSpeed;
+    public ForceMode InitialForceMode = ForceMode.Fixed;
+
+    [Tooltip("Exact initial force vector (used in Fixed force mode).")]
+    public Vector2 FixedInitialForce = new Vector2(200, 300);
+
+    [Tooltip("Minimum force magnitude for the initial force vector (used in Random force mode).")]
+    public float MinInitialForce = 60;
+
+    [Tooltip("Maximum force magnitude for the initial force vector (used in Random force mode).")]
+    public float MaxInitialForce = 250;
+
+    private new Rigidbody2D rigidbody2D;
+    private float squareMaxSpeed;
+    private float squareMinSpeed;
+
     protected virtual void Start()
     {
-        AddRandomForce();
+        rigidbody2D = GetComponent<Rigidbody2D>();
+
+        squareMaxSpeed = Mathf.Pow(MaxSpeed, 2);
+        squareMinSpeed = Mathf.Pow(MinSpeed, 2);
+
+        ForceMove();
     }
 
-    public void AddRandomForce()
+    public void ForceMove()
     {
-        var x = 0f;
-        var y = 0f;
+        rigidbody2D.AddForce(
+                    InitialForceMode == ForceMode.Random
+                    ? GetRandomForceVector()
+                    : FixedInitialForce);
+    }
 
-        while (Mathf.Abs(x) < 50)
+    private void FixedUpdate()
+    {
+        var currentVelocity = rigidbody2D.velocity;
+        if (currentVelocity.sqrMagnitude < squareMinSpeed)
         {
-            x = Random.Range(-200f, 200f);
+            rigidbody2D.velocity = currentVelocity.normalized * MinSpeed;
         }
-
-        while (Mathf.Abs(y) < 80)
+        else if (currentVelocity.sqrMagnitude > squareMaxSpeed)
         {
-            y = Random.Range(-300f, 300f);
+            rigidbody2D.velocity = currentVelocity.normalized * MaxSpeed;
         }
+    }
 
-        GetComponent<Rigidbody2D>()?.AddForce(new Vector2(x, y));
+    private Vector2 GetRandomForceVector()
+    {
+        var result = Vector2.zero;
+        while (result.magnitude < MinInitialForce)
+        {
+            result = Random.insideUnitCircle * MaxInitialForce;
+        }
+        return result;
+    }
+
+    public enum ForceMode
+    {
+        Random,
+        Fixed
     }
 }

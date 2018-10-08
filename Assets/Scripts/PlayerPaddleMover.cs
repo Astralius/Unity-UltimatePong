@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerPaddleMover : MonoBehaviour
 {  
     [Tooltip("How far to the left/right can the paddle move?")]
-    public int HorizontalPositionThreshold = 4;
+    public float HorizontalPositionThreshold = 4;
 
     [Tooltip("Horizontal force to act upon the paddle (in Joystick or LeftRight mode).")]
     public int SpeedForce = 500;

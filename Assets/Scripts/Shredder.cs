@@ -23,6 +23,6 @@ public class Shredder : MonoBehaviour
         ball.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         ball.transform.position = RespawnPoint.position;
         yield return new WaitForSeconds(RespawnDelay);
-        ball.AddRandomForce();
+        ball.ForceMove();
     }
 }
