@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Demo-Drag.unity
     guid: f9d58a11bbb6b8d42b03acc7f3a09594
   - enabled: 1
-    path: Assets/Scenes/Demo-Joystick.unity
-    guid: 21e093c022934ad4b82db1ef710f2db0
-  - enabled: 1
     path: Assets/Scenes/Demo-JoystickDrag.unity
     guid: aa4a768be580e8d4cb1e8b2f37bdc85a
   - enabled: 1
