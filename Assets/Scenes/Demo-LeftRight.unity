@@ -535,6 +535,21 @@ Prefab:
       propertyPath: ControlMode
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114883426366883090, guid: 68382768b9a54084588131b00a12a726,
+        type: 2}
+      propertyPath: SpeedForce
+      value: 950
+      objectReference: {fileID: 0}
+    - target: {fileID: 50680204989409790, guid: 68382768b9a54084588131b00a12a726,
+        type: 2}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50680204989409790, guid: 68382768b9a54084588131b00a12a726,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68382768b9a54084588131b00a12a726, type: 2}
   m_IsPrefabAsset: 0
