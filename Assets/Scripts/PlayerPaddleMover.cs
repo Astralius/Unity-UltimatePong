@@ -161,14 +161,6 @@ public class PlayerPaddleMover : MonoBehaviour
                 break;
             }
 
-            case ControlMode.Joystick:
-            {
-                rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
-                paddleReferencePosition = null;
-                joystickReferencePosition = screenPosition.ToWorld();
-                break;
-            }
-
             case ControlMode.JoystickDrag:
             {
                 rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
@@ -203,26 +195,6 @@ public class PlayerPaddleMover : MonoBehaviour
                                                   -HorizontalPositionThreshold,
                                                   HorizontalPositionThreshold);
                     transform.localPosition = helperVector2;
-                }
-
-                break;
-            }
-
-            case ControlMode.Joystick:
-            {
-                if (joystickReferencePosition.HasValue)
-                {
-                    var delta = screenPosition.ToWorld().x - joystickReferencePosition.Value.x;
-                    if (Mathf.Abs(delta) > JoystickThreshold)
-                    {
-                        var isMovingRight = delta > 0;
-                        helperVector2.x = isMovingRight ? SpeedForce : -SpeedForce;               
-                        constantForce2D.relativeForce = helperVector2;
-                    }
-                    else
-                    {
-                        constantForce2D.relativeForce = helperVector2;
-                    }
                 }
 
                 break;
@@ -295,6 +267,5 @@ public enum ControlMode
 {
     Drag,         // player long-presses the paddle and drags it around
     JoystickDrag, // player long-presses any point on the screen and drags the paddle around
-    Joystick,     // player presses any point on the screen and moves the paddle with constant speed, depending on drag direction
     LeftRight,    // screen is divided into left-zone and right-zone. Player moves the paddle with constant speed in the direction of the zone he's pressing.
 }
