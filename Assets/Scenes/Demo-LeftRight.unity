@@ -396,17 +396,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1365591569635892, guid: 347e2b3065080a147a8e2ab68dd15dd3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661503510025738, guid: 347e2b3065080a147a8e2ab68dd15dd3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 347e2b3065080a147a8e2ab68dd15dd3, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &555943732 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1365591569635892, guid: 347e2b3065080a147a8e2ab68dd15dd3,
+--- !u!212 &555943736 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212413500051422164, guid: 347e2b3065080a147a8e2ab68dd15dd3,
     type: 2}
   m_PrefabInternal: {fileID: 555943731}
---- !u!1 &555943733 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1661503510025738, guid: 347e2b3065080a147a8e2ab68dd15dd3,
+--- !u!212 &555943739 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212708358276493906, guid: 347e2b3065080a147a8e2ab68dd15dd3,
     type: 2}
   m_PrefabInternal: {fileID: 555943731}
 --- !u!1 &1044301801
@@ -510,46 +518,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114667858513193978, guid: 68382768b9a54084588131b00a12a726,
-        type: 2}
-      propertyPath: Owner
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114103693168042452, guid: 68382768b9a54084588131b00a12a726,
-        type: 2}
-      propertyPath: Owner
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 114883426366883090, guid: 68382768b9a54084588131b00a12a726,
         type: 2}
       propertyPath: LeftControlZone
       value: 
-      objectReference: {fileID: 555943733}
+      objectReference: {fileID: 555943739}
     - target: {fileID: 114883426366883090, guid: 68382768b9a54084588131b00a12a726,
         type: 2}
       propertyPath: RightControlZone
       value: 
-      objectReference: {fileID: 555943732}
-    - target: {fileID: 114883426366883090, guid: 68382768b9a54084588131b00a12a726,
-        type: 2}
-      propertyPath: ControlMode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114883426366883090, guid: 68382768b9a54084588131b00a12a726,
-        type: 2}
-      propertyPath: SpeedForce
-      value: 950
-      objectReference: {fileID: 0}
-    - target: {fileID: 50680204989409790, guid: 68382768b9a54084588131b00a12a726,
-        type: 2}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50680204989409790, guid: 68382768b9a54084588131b00a12a726,
-        type: 2}
-      propertyPath: m_LinearDrag
-      value: 11
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 555943736}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68382768b9a54084588131b00a12a726, type: 2}
   m_IsPrefabAsset: 0

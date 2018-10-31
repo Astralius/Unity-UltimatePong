@@ -406,6 +406,11 @@ Prefab:
       propertyPath: RightControlZone
       value: 
       objectReference: {fileID: 931758889}
+    - target: {fileID: 114883426366883090, guid: 68382768b9a54084588131b00a12a726,
+        type: 2}
+      propertyPath: ControlMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68382768b9a54084588131b00a12a726, type: 2}
   m_IsPrefabAsset: 0
@@ -451,14 +456,14 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 347e2b3065080a147a8e2ab68dd15dd3, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &931758889 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1365591569635892, guid: 347e2b3065080a147a8e2ab68dd15dd3,
+--- !u!212 &931758889 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212413500051422164, guid: 347e2b3065080a147a8e2ab68dd15dd3,
     type: 2}
   m_PrefabInternal: {fileID: 931758888}
---- !u!1 &931758890 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1661503510025738, guid: 347e2b3065080a147a8e2ab68dd15dd3,
+--- !u!212 &931758890 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212708358276493906, guid: 347e2b3065080a147a8e2ab68dd15dd3,
     type: 2}
   m_PrefabInternal: {fileID: 931758888}
 --- !u!1 &1044301801

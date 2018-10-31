@@ -264,11 +264,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &457150409 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1661503510025738, guid: 347e2b3065080a147a8e2ab68dd15dd3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1659497263}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,11 +357,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &587913293 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1365591569635892, guid: 347e2b3065080a147a8e2ab68dd15dd3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1659497263}
 --- !u!1 &1044301801
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,12 +467,12 @@ Prefab:
         type: 2}
       propertyPath: LeftControlZone
       value: 
-      objectReference: {fileID: 457150409}
+      objectReference: {fileID: 1659497265}
     - target: {fileID: 114883426366883090, guid: 68382768b9a54084588131b00a12a726,
         type: 2}
       propertyPath: RightControlZone
       value: 
-      objectReference: {fileID: 587913293}
+      objectReference: {fileID: 1659497264}
     - target: {fileID: 114883426366883090, guid: 68382768b9a54084588131b00a12a726,
         type: 2}
       propertyPath: ControlMode
@@ -533,3 +523,13 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 347e2b3065080a147a8e2ab68dd15dd3, type: 2}
   m_IsPrefabAsset: 0
+--- !u!212 &1659497264 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212413500051422164, guid: 347e2b3065080a147a8e2ab68dd15dd3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1659497263}
+--- !u!212 &1659497265 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 212708358276493906, guid: 347e2b3065080a147a8e2ab68dd15dd3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1659497263}
