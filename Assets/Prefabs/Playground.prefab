@@ -365,7 +365,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1947857765419518
 GameObject:
@@ -718,12 +718,12 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1057098057059866}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10
-  m_LinearDrag: 7
+  m_LinearDrag: 11
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -1362,9 +1362,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HorizontalPositionThreshold: 3.375
-  SpeedForce: 600
+  SpeedForce: 950
   JoystickThreshold: 0.25
-  ControlMode: 1
+  ControlMode: 2
   LeftControlZone: {fileID: 0}
   RightControlZone: {fileID: 0}
 --- !u!114 &114893575246599696

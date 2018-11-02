@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+#pragma warning disable 108,114
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Ball : MonoBehaviour
@@ -16,7 +17,7 @@ public class Ball : MonoBehaviour
     [Tooltip("Maximum force magnitude for the initial force vector (used in Random force mode).")]
     public float MaxInitialForce = 250;
 
-    private new Rigidbody2D rigidbody2D;
+    private Rigidbody2D rigidbody2D;
     private float squareMaxSpeed;
     private float squareMinSpeed;
 
