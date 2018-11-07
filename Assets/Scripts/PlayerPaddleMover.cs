@@ -20,7 +20,8 @@ public class PlayerPaddleMover : MonoBehaviour
 
     public ControlMode ControlMode;
     public SpriteRenderer LeftControlZone;
-    public SpriteRenderer RightControlZone;   
+    public SpriteRenderer RightControlZone;
+    public DragSlider DragSlider;
 
     private new Transform transform;
     private Rigidbody2D rigidbody2D;
@@ -46,6 +47,18 @@ public class PlayerPaddleMover : MonoBehaviour
         var isLeftRightControlled = ControlMode == ControlMode.LeftRight;
         LeftControlZone.gameObject.SetActive(isLeftRightControlled);
         RightControlZone.gameObject.SetActive(isLeftRightControlled);
+
+        if (ControlMode == ControlMode.Drag)
+        {
+            DragSlider.PositionChanged.AddListener(OnDragSliderPositionChanged);
+        }
+    }
+
+    private void OnDragSliderPositionChanged(float newPosition)
+    {
+        helperVector2.x = newPosition;
+        helperVector2.y = transform.position.y;
+        transform.position = helperVector2;
     }
 
     private void FixedUpdate()
@@ -145,22 +158,6 @@ public class PlayerPaddleMover : MonoBehaviour
     {
         switch (ControlMode)
         {
-            case ControlMode.Drag:
-            {
-                var hit = Physics2D.CircleCast(screenPosition.ToWorld(), 1.0f, Vector2.zero);
-                if (hit.transform != null && hit.transform.tag == "Player")
-                {
-                    rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
-                    paddleReferencePosition = hit.transform.localPosition;
-                    joystickReferencePosition = null;
-                }
-                else
-                {
-                    longPressGesture.Reset();
-                }
-                break;
-            }
-
             case ControlMode.JoystickDrag:
             {
                 rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
@@ -186,20 +183,6 @@ public class PlayerPaddleMover : MonoBehaviour
     {
         switch (ControlMode)
         {
-            case ControlMode.Drag:
-            {
-                if (paddleReferencePosition.HasValue)
-                {
-                    var newLocalX = transform.parent.InverseTransformPoint(screenPosition.ToWorld()).x;
-                    helperVector2.x = Mathf.Clamp(newLocalX,
-                                                  -HorizontalPositionThreshold,
-                                                  HorizontalPositionThreshold);
-                    transform.localPosition = helperVector2;
-                }
-
-                break;
-            }
-
             case ControlMode.JoystickDrag:
             {
                 if (joystickReferencePosition.HasValue && paddleReferencePosition.HasValue)
@@ -265,7 +248,7 @@ public class PlayerPaddleMover : MonoBehaviour
 
 public enum ControlMode
 {
-    Drag,         // player long-presses the paddle and drags it around
+    Drag,         // player drags the paddle by dragging a slider knob beneath it
     JoystickDrag, // player long-presses any point on the screen and drags the paddle around
     LeftRight,    // screen is divided into left-zone and right-zone. Player moves the paddle with constant speed in the direction of the zone he's pressing.
 }
