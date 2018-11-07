@@ -48,7 +48,7 @@ public class PlayerPaddleMover : MonoBehaviour
         RightControlZone.gameObject.SetActive(isLeftRightControlled);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         transform.localPosition = Vector2.ClampMagnitude(transform.localPosition, HorizontalPositionThreshold);
     }
