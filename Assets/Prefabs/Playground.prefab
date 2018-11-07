@@ -237,8 +237,8 @@ GameObject:
   - component: {fileID: 212044944694896256}
   - component: {fileID: 50946410976735186}
   - component: {fileID: 61978202295525218}
-  - component: {fileID: 114859877260762400}
   - component: {fileID: 114622712033620270}
+  - component: {fileID: 114858463034969596}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -257,8 +257,8 @@ GameObject:
   - component: {fileID: 212093991915944132}
   - component: {fileID: 50526914762560424}
   - component: {fileID: 61571826512088566}
-  - component: {fileID: 114460189957156622}
   - component: {fileID: 114558360763031856}
+  - component: {fileID: 114060304506428522}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -294,8 +294,8 @@ GameObject:
   - component: {fileID: 212869954351793636}
   - component: {fileID: 50875195297409840}
   - component: {fileID: 61530974352276688}
-  - component: {fileID: 114445033677299332}
   - component: {fileID: 114324597807487750}
+  - component: {fileID: 114895587304877714}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -391,7 +391,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166398660614324}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -4.5000005, y: 0, z: 0}
+  m_LocalPosition: {x: -4.55, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4527456349103180}
@@ -418,7 +418,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1893903562334832}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 4.5, y: 0, z: 0}
+  m_LocalPosition: {x: 4.55, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4753896548448558}
@@ -446,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 1571708565332990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.25, z: 1}
+  m_LocalScale: {x: 1.25, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 4301326294198042}
   m_RootOrder: 0
@@ -458,7 +458,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1035441741409846}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 4.5, z: 0}
+  m_LocalPosition: {x: 0, y: 4.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4300615203725022}
@@ -473,7 +473,7 @@ Transform:
   m_GameObject: {fileID: 1057098057059866}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.25, z: 1}
+  m_LocalScale: {x: 1.25, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 4583874319017082}
   m_RootOrder: 0
@@ -529,7 +529,7 @@ Transform:
   m_GameObject: {fileID: 1547299812434012}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.25, z: 1}
+  m_LocalScale: {x: 1.25, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 4165662128540966}
   m_RootOrder: 0
@@ -541,7 +541,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1267891324336618}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.5, z: 0}
+  m_LocalPosition: {x: 0, y: -4.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4361082906074376}
@@ -612,7 +612,7 @@ Transform:
   m_GameObject: {fileID: 1762410536629084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.25, z: 1}
+  m_LocalScale: {x: 1.25, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 4201984644443688}
   m_RootOrder: 0
@@ -651,7 +651,7 @@ Transform:
   m_GameObject: {fileID: 1075433504670542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 2}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 2}
   m_Children: []
   m_Father: {fileID: 4427263789568000}
   m_RootOrder: 3
@@ -746,8 +746,8 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 94b0b7935de2cd84d9e67bfeb9d9d144, type: 2}
-  m_Interpolate: 1
+  m_Material: {fileID: 6200000, guid: 5e6358855c14763488ab9af15a5a81e2, type: 2}
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -1207,6 +1207,20 @@ TrailRenderer:
   m_MinVertexDistance: 0.2
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &114060304506428522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571708565332990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218cdd8cbb1611a46b8b8c7bd4c724f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TheBall: {fileID: 114280982323903084}
+  HorizontalPositionThreshold: 3.75
+  SafetyMargin: 0.9
 --- !u!114 &114103693168042452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1238,6 +1252,44 @@ MonoBehaviour:
   FixedInitialForce: {x: 0, y: -100}
   MinInitialForce: 60
   MaxInitialForce: 250
+  Collided:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114060304506428522}
+        m_MethodName: OnBallCollided
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114895587304877714}
+        m_MethodName: OnBallCollided
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114858463034969596}
+        m_MethodName: OnBallCollided
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114324597807487750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1249,31 +1301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924d5f857e749f942b9c725694a01fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SideForce: 100
---- !u!114 &114445033677299332
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1762410536629084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de4dd8a9289b22479929c81743a275c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TheBall: {fileID: 4942586360116026}
---- !u!114 &114460189957156622
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1571708565332990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de4dd8a9289b22479929c81743a275c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TheBall: {fileID: 4942586360116026}
+  MaxDeflectionAngle: 60
+  SpeedIncrement: 0.1
 --- !u!114 &114558360763031856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1285,7 +1314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924d5f857e749f942b9c725694a01fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SideForce: 100
+  MaxDeflectionAngle: 60
+  SpeedIncrement: 0.1
 --- !u!114 &114610881986473554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1297,7 +1327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924d5f857e749f942b9c725694a01fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SideForce: 100
+  MaxDeflectionAngle: 60
+  SpeedIncrement: 0.1
 --- !u!114 &114622712033620270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1309,7 +1340,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924d5f857e749f942b9c725694a01fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SideForce: 100
+  MaxDeflectionAngle: 60
+  SpeedIncrement: 0.1
 --- !u!114 &114667858513193978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1338,7 +1370,7 @@ MonoBehaviour:
   Owner: {fileID: 1547299812434012}
   RespawnPoint: {fileID: 4487639377024234}
   RespawnDelay: 3
---- !u!114 &114859877260762400
+--- !u!114 &114858463034969596
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1346,10 +1378,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1547299812434012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de4dd8a9289b22479929c81743a275c, type: 3}
+  m_Script: {fileID: 11500000, guid: 218cdd8cbb1611a46b8b8c7bd4c724f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TheBall: {fileID: 4942586360116026}
+  TheBall: {fileID: 114280982323903084}
+  HorizontalPositionThreshold: 3.75
+  SafetyMargin: 0.9
 --- !u!114 &114883426366883090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1361,7 +1395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9c4fc370b11c44189690806f730bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HorizontalPositionThreshold: 3.375
+  HorizontalPositionThreshold: 3.75
   SpeedForce: 950
   JoystickThreshold: 0.25
   ControlMode: 2
@@ -1381,6 +1415,20 @@ MonoBehaviour:
   Owner: {fileID: 1057098057059866}
   RespawnPoint: {fileID: 4487639377024234}
   RespawnDelay: 3
+--- !u!114 &114895587304877714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1762410536629084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218cdd8cbb1611a46b8b8c7bd4c724f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TheBall: {fileID: 114280982323903084}
+  HorizontalPositionThreshold: 3.75
+  SafetyMargin: 0.9
 --- !u!212 &212044944694896256
 SpriteRenderer:
   m_ObjectHideFlags: 1
