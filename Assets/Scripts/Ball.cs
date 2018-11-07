@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
+
 #pragma warning disable 108,114
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -17,19 +19,16 @@ public class Ball : MonoBehaviour
     [Tooltip("Maximum force magnitude for the initial force vector (used in Random force mode).")]
     public float MaxInitialForce = 250;
 
+    public UnityEvent Collided;
+
+    private new Transform transform;
     private Rigidbody2D rigidbody2D;
     private float squareMaxSpeed;
     private float squareMinSpeed;
 
-    protected virtual void Start()
-    {
-        rigidbody2D = GetComponent<Rigidbody2D>();
-
-        squareMaxSpeed = Mathf.Pow(MaxSpeed, 2);
-        squareMinSpeed = Mathf.Pow(MinSpeed, 2);
-
-        ForceMove();
-    }
+    public Vector3 CurrentPosition => transform.position;
+    public Vector3 PreviousPosition { get; private set; }
+    public float CurrentSpeed => rigidbody2D.velocity.magnitude;
 
     public void ForceMove()
     {
@@ -39,17 +38,26 @@ public class Ball : MonoBehaviour
                     : FixedInitialForce);
     }
 
+    protected virtual void Start()
+    {
+        transform = GetComponent<Transform>();
+        rigidbody2D = GetComponent<Rigidbody2D>();
+
+        squareMaxSpeed = Mathf.Pow(MaxSpeed, 2);
+        squareMinSpeed = Mathf.Pow(MinSpeed, 2);
+
+        ForceMove();
+    }
+
     private void FixedUpdate()
     {
-        var currentVelocity = rigidbody2D.velocity;
-        if (currentVelocity.sqrMagnitude < squareMinSpeed)
-        {
-            rigidbody2D.velocity = currentVelocity.normalized * MinSpeed;
-        }
-        else if (currentVelocity.sqrMagnitude > squareMaxSpeed)
-        {
-            rigidbody2D.velocity = currentVelocity.normalized * MaxSpeed;
-        }
+        PreviousPosition = transform.position;
+        LimitVelocity(MinSpeed, MaxSpeed);
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Collided.Invoke();
     }
 
     private Vector2 GetRandomForceVector()
@@ -60,6 +68,19 @@ public class Ball : MonoBehaviour
             result = Random.insideUnitCircle * MaxInitialForce;
         }
         return result;
+    }
+
+    private void LimitVelocity(float minimum, float maximum)
+    {
+        var currentVelocity = rigidbody2D.velocity;
+        if (currentVelocity.sqrMagnitude < squareMinSpeed)
+        {
+            rigidbody2D.velocity = currentVelocity.normalized * minimum;
+        }
+        else if (currentVelocity.sqrMagnitude > squareMaxSpeed)
+        {
+            rigidbody2D.velocity = currentVelocity.normalized * maximum;
+        }
     }
 
     public enum ForceMode
