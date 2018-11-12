@@ -21,7 +21,6 @@ public class PlayerPaddleMover : MonoBehaviour
     public ControlMode ControlMode;
     public SpriteRenderer LeftControlZone;
     public SpriteRenderer RightControlZone;
-    public DragSlider DragSlider;
 
     private new Transform transform;
     private Rigidbody2D rigidbody2D;
@@ -36,6 +35,16 @@ public class PlayerPaddleMover : MonoBehaviour
     private GestureTouch? activeTouchState;
 
 
+    public void MovePaddleInDragMode(float newPosition)
+    {
+        if (ControlMode == ControlMode.Drag)
+        {
+            helperVector2.x = newPosition;
+            helperVector2.y = transform.position.y;
+            transform.position = helperVector2;
+        }
+    }
+
     private void Start()
     {
         transform = GetComponent<Transform>();
@@ -46,19 +55,7 @@ public class PlayerPaddleMover : MonoBehaviour
 
         var isLeftRightControlled = ControlMode == ControlMode.LeftRight;
         LeftControlZone.gameObject.SetActive(isLeftRightControlled);
-        RightControlZone.gameObject.SetActive(isLeftRightControlled);
-
-        if (ControlMode == ControlMode.Drag)
-        {
-            DragSlider.PositionChanged.AddListener(OnDragSliderPositionChanged);
-        }
-    }
-
-    private void OnDragSliderPositionChanged(float newPosition)
-    {
-        helperVector2.x = newPosition;
-        helperVector2.y = transform.position.y;
-        transform.position = helperVector2;
+        RightControlZone.gameObject.SetActive(isLeftRightControlled);        
     }
 
     private void FixedUpdate()
